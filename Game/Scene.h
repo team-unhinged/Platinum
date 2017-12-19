@@ -10,5 +10,5 @@ public:
     Scene();
 
 private:
-    std::vector<Entity*> entities;
-}
+    std::vector<const Entity&> entities;
+};

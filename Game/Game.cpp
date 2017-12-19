@@ -39,14 +39,14 @@ void Game::Load() {
     // preliminary work
 
     // call the load callback
-    load( this );
+    load( *this );
 }
 
 void Game::Input() {
     // preliminary work
     
     // call the input callback
-    input( this );
+    input( *this );
 }
 
 void Game::Update() {
@@ -54,14 +54,14 @@ void Game::Update() {
 
     // call the update callback
     GLfloat dt = 0.0f;
-    update( this, dt );
+    update( *this, dt );
 }
 
 void Game::Render() {
     // preliminary work
     
     // call the render callback
-    render( this );
+    render( *this );
     // double buffer the window
     this->display->Update();
 }
