@@ -21,7 +21,7 @@ public:
     void Start();
     //virtual ~Game();
     
-    inline Display* GetDisplay() { return this->display; };
+    inline Display& GetDisplay() const { return this->display; };
 
 private:
     void Loop();
@@ -33,6 +33,6 @@ private:
     std::function<void(const Game&)>       input;
     std::function<void(const Game&,float)> update;
     std::function<void(const Game&)>       render;
-    Display *display;
-    Scene *scene;
+    Display& display;
+    Scene& scene;
 };

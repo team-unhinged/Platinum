@@ -28,18 +28,18 @@ int main () {
     //       Therefore the lambdas defined here must take a Game * type as the first arg.
     Game g;
 
-    g.OnLoad( [=] ( Game *game ) {
+    g.OnLoad( [=] ( const Game& game ) {
     });
 
-    g.OnInput( [=] ( Game *game ) {
+    g.OnInput( [=] ( const Game& game ) {
     });
 
-    g.OnUpdate( [=] ( Game *game, float dt ) { 
+    g.OnUpdate( [=] ( const Game& game, float dt ) { 
     });
 
-    g.OnRender( [=] ( Game *game ) { 
-        game->GetDisplay()->Clear();
-        game->GetDisplay()->SetClearColor( 0x00ff00ff );
+    g.OnRender( [=] ( const Game& game ) { 
+        game.GetDisplay().Clear();
+        game.GetDisplay().SetClearColor( 0x00ff00ff );
     });
 
     // This initializes the game subsystems and creates the window,
